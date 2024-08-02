@@ -1,5 +1,7 @@
-.page {
-  margin: 8rem 16rem;
+@media (min-width: 768px) {
+  .page {
+    margin: 6rem 12rem 0;
+  }
 }
 
 .breadcrumb {
@@ -19,9 +21,35 @@
   font-size: small;
 }
 
+.product-container {
+  padding: 0 0.5rem;
+}
+
 .product-image {
   max-width: 100%;
   height: auto;
+}
+
+.product-price {
+  margin: 2rem 0;
+}
+
+.product-shipping {
+  margin: 2rem 0 1rem;
+}
+
+.product-shipping .info-icon {
+  color: gray;
+}
+
+.product-guarantee {
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .product-guarantee {
+    flex-direction: row;
+  }
 }
 
 .shipping-icon {
@@ -32,10 +60,6 @@
   align-items: center;
   justify-content: center;
   margin: 0 1rem;
-}
-
-.guarantee-label {
-  margin: 1rem 0;
 }
 
 .button {
