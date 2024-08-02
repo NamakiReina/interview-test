@@ -5,11 +5,22 @@ import ProductNameBrand from "./ProductNameBrand";
 import ProductShipping from "./ProductShipping";
 import ProductGuarantee from "./ProductGuarantee";
 
-export default function ProductInfo() {
+export default function ProductInfo(props: {
+  name: string;
+  brand: string;
+  sku: string;
+  startingFrom: number;
+  highestBid: number;
+  lastSale: number;
+}) {
   return (
     <>
-      <ProductNameBrand />
-      <ProductPrice />
+      <ProductNameBrand name={props.name} brand={props.brand} sku={props.sku} />
+      <ProductPrice
+        startingFrom={props.startingFrom}
+        highestBid={props.highestBid}
+        lastSale={props.lastSale}
+      />
       <Divider variant="fullWidth" />
       <ProductShipping />
       <Divider variant="fullWidth" />

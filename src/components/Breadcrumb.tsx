@@ -1,10 +1,22 @@
-"use client"
+"use client";
 
 import styles from "@/app/page.module.css";
 import { NotificationsNone, ShareOutlined } from "@mui/icons-material";
-import { Box, Breadcrumbs, IconButton, Link, useMediaQuery, useTheme } from "@mui/material";
+import {
+  Box,
+  Breadcrumbs,
+  IconButton,
+  Link,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 
-export default function Breadcrumb() {
+export default function Breadcrumb(props: {
+  category: string;
+  brand: string;
+  name: string;
+}) {
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
 
@@ -21,14 +33,12 @@ export default function Breadcrumb() {
           Home
         </Link>
         <Link color="inherit" underline="none" href="/">
-          Shoes
+          {props.category}
         </Link>
         <Link color="inherit" underline="none" href="/">
-          New Balance
+          {props.brand}
         </Link>
-        <Link color="inherit" underline="none" href="/">
-          New Balance 530 White Silver Navy
-        </Link>
+        <Typography color="inherit">{props.name}</Typography>
       </Breadcrumbs>
       <Box>
         <IconButton className={styles["breadcrumb-color"]}>
